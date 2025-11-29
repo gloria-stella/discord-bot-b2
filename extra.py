@@ -33,7 +33,7 @@ class ExtraFeatures:
         uid = str(user_id)
         self.data[uid]["total_commands"] += 1
 
-    # --- Commandes bonus ---
+    #  Commandes bonus 
     def ping(self, user_id):
         self._init_user(user_id)
         self.data[str(user_id)]["ping_count"] += 1
@@ -59,7 +59,7 @@ class ExtraFeatures:
         self.save()
         return q
 
-    # --- Préférences utilisateur ---
+        #Préférences utilisateur
     def set_preference(self, user_id, preference):
         """Changer la préférence de citation (ex: motivation, humour, etc.)"""
         self._init_user(user_id)
@@ -71,7 +71,7 @@ class ExtraFeatures:
         self._init_user(user_id)
         return self.data[str(user_id)]
 
-    # --- Sauvegarde ---
+              # Sauvegarde 
     def save(self):
         with open(self.path, "w") as f:
             json.dump(self.data, f, indent=4)

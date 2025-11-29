@@ -4,7 +4,7 @@ from history import HistoryManager
 from tree import ConversationTree
 from extra import ExtraFeatures
 import os
-from dotenv import load_dotenv   # pour charger le fichier .env
+from dotenv import load_dotenv   #(pour charger le fichier .env)
 
 # Charger les variables d'environnement
 load_dotenv()
@@ -15,20 +15,20 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Assure que le dossier data existe
+                       # Assure que le dossier data existe
 os.makedirs("data", exist_ok=True)
 
-# Chargement des modules
+                  # Chargement des modules
 history = HistoryManager()
 tree = ConversationTree()
 extras = ExtraFeatures()
 
-# Chargement des données sauvegardées
+                            # Chargement des données sauvegardées
 history.load()
 tree.load()
 extras.load()
+                 #commandes : historique
 
-# --- Commandes : historique ---
 @bot.command()
 async def last(ctx):
     history.add(ctx.author.id, "last")
@@ -50,7 +50,7 @@ async def clear_history(ctx):
     history.save()
     await ctx.send("Historique supprimé.")
 
-# --- Commandes : conversation via arbre ---
+               # Commandes : conversation via arbre
 @bot.command()
 async def helpme(ctx):
     history.add(ctx.author.id, "helpme")
@@ -80,7 +80,7 @@ async def speak(ctx, *, subject):
     exists = tree.contains(subject)
     await ctx.send("oui" if exists else "non")
 
-# --- Commandes bonus ---
+# Commandes pour les bonus
 @bot.command()
 async def ping(ctx):
     history.add(ctx.author.id, "ping")
@@ -101,7 +101,7 @@ async def quote(ctx):
     q = extras.random_quote(ctx.author.id)
     await ctx.send(q)
 
-# --- Sauvegarde automatique à la déconnexion ---
+                  # Sauvegarde automatique à la déconnexion
 @bot.event
 async def on_disconnect():
     history.save()

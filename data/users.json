@@ -1,11 +1,11 @@
 {
     "1280174408308232326": {
-        "ping_count": 3,
+        "ping_count": 4,
         "quote_count": 0,
-        "random_number_count": 2,
+        "random_number_count": 3,
         "last_quote": null,
-        "last_random_number": 35,
-        "total_commands": 5,
+        "last_random_number": 43,
+        "total_commands": 7,
         "preferred_quote_type": "motivation"
     }
 }
