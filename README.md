@@ -1,6 +1,7 @@
-Bot Discord B2 – Projet de rattrapage
+Bot Discord B2 – Projet de rattrapage par NJUNDOM STELLA
 
         Description
+
 Ce projet est un bot Dicord réalisé en Python dans le cadre du rattrapage.Il contient les fonctionnalités demandées dans l’énoncé c'est-à-dire : historique, arbre de discussion, sauvegarde persistante, ainsi que les 3 commandes bonus.
 
         Fonctionnalités
@@ -57,6 +58,7 @@ extra.py → commandes bonus et stats utilisateurs.
 data/ → fichiers JSON pour la sauvegarde.
 
         Checklist de test
+
 requirements.txt installe toutes les dépendances (discord.py, python-dotenv)
 
 Le fichier .env est requis pour lancer le bot :
